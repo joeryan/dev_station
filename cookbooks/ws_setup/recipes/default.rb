@@ -14,4 +14,6 @@ packs.each do |pack|
   end
 end
 
-include_recipe 'ws_setup::rails_dev'
+# include_recipe 'ws_setup::rails_dev'
+include_recipe 'ws_setup::py_dev'
+include_recipe 'ws_setup::ansible'

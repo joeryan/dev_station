@@ -11,9 +11,6 @@ apt_repository 'rvm' do
   uri 'ppa:rael-gc/rvm'
 end
 
-apt_update 'update' do
-  action :update
-end
 
 apt_package 'rvm'
 
@@ -22,7 +19,7 @@ apt_package 'rvm'
 bash 'ruby version installation' do
   cwd "#{ENV['HOME']}"
   code <<-EOH
-    /usr/share/rvm/bin/rvm install 2.4.1
+    /usr/share/rvm/bin/rvm install 2.4.1;
     /usr/share/rvm/bin/rvm use 2.4.1 --default
   EOH
 end

@@ -1,18 +1,10 @@
 package 'Install software-propteries-common for ubuntu' do
-  case node[:platform]
-  when 'ubuntu', debian'
-    package_name 'software-properties-common'
-  end
+  package_name 'software-properties-common'
 end
   
-case node[:platform]
-when 'ubuntu', 'debian' 
-  apt_repository 'ansible' do
-    uri	'ppa:ansible/ansible'
-    components ['main', 'stable']
-  end
-when 'centos'
-  package 'epel-release' 
+apt_repository 'ansible' do
+  uri	'ppa:ansible/ansible'
+  components ['main', 'stable']
 end
 
 package 'Install Ansible' do
